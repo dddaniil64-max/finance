@@ -23,6 +23,19 @@ database_name = "finance-manager-db"
 database_id = "ad0ba36d-809c-4463-baf9-cb8ff470839b"
 migrations_dir = "migrations"
 
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+invocation_logs = true
+persist = true
+
+[observability.traces]
+enabled = true
+head_sampling_rate = 1
+persist = true
+
+[observability.issue_detection]
+enabled = true
 # # Закрытый R2-бакет для ежедневных резервных копий (создаётся один раз, см. README)
 # [[r2_buckets]]
 # binding = "BACKUPS"
