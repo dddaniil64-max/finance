@@ -22,11 +22,11 @@ database_name = "finance-manager-db"
 database_id = "ad0ba36d-809c-4463-baf9-cb8ff470839b"
 migrations_dir = "migrations"
 
-# Закрытый R2-бакет для ежедневных резервных копий (создаётся один раз, см. README)
-[[r2_buckets]]
-binding = "BACKUPS"
-bucket_name = "finance-manager-backups"
+# # Закрытый R2-бакет для ежедневных резервных копий (создаётся один раз, см. README)
+# [[r2_buckets]]
+# binding = "BACKUPS"
+# bucket_name = "finance-manager-backups"
 
-# Ежедневный бэкап и очистка в 03:00 UTC
-[triggers]
-crons = ["0 3 * * *"]
+# # Ежедневный бэкап и очистка в 03:00 UTC
+# [triggers]
+# crons = ["0 3 * * *"]
