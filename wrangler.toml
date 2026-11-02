@@ -19,7 +19,7 @@ APP_URL = ""
 [[d1_databases]]
 binding = "DB"
 database_name = "finance-manager-db"
-database_id = "PASTE_YOUR_D1_DATABASE_ID_HERE"
+database_id = "ad0ba36d-809c-4463-baf9-cb8ff470839b"
 migrations_dir = "migrations"
 
 # Закрытый R2-бакет для ежедневных резервных копий (создаётся один раз, см. README)
