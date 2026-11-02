@@ -1,0 +1,25 @@
+{
+  "name": "finance-manager",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "description": "FINANCE — multi-user finance manager with Cloudflare Workers and D1",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create finance-manager-db",
+    "db:migrate:local": "wrangler d1 migrations apply finance-manager-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply finance-manager-db --remote",
+    "test": "node --test test/*.test.mjs",
+    "backup:to-sql": "node scripts/backup-to-sql.mjs",
+    "dev:local": "node scripts/dev-local.mjs",
+    "r2:create": "wrangler r2 bucket create finance-manager-backups"
+  },
+  "devDependencies": {
+    "wrangler": "^4.45.0"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}

@@ -1,0 +1,32 @@
+name = "finance-manager"
+main = "src/index.js"
+compatibility_date = "2026-10-31"
+workers_dev = true
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+# /api/* должен обрабатываться Worker-ом, а не отдаваться как статика
+run_worker_first = ["/api/*"]
+
+[vars]
+# Адрес отправителя в Resend: домен должен быть подтверждён в Resend.
+MAIL_FROM = "FINANCE <noreply@example.com>"
+# Публичный адрес сайта для ссылок в письмах (без / на конце). Если пусто — берётся адрес запроса.
+APP_URL = ""
+
+[[d1_databases]]
+binding = "DB"
+database_name = "finance-manager-db"
+database_id = "PASTE_YOUR_D1_DATABASE_ID_HERE"
+migrations_dir = "migrations"
+
+# Закрытый R2-бакет для ежедневных резервных копий (создаётся один раз, см. README)
+[[r2_buckets]]
+binding = "BACKUPS"
+bucket_name = "finance-manager-backups"
+
+# Ежедневный бэкап и очистка в 03:00 UTC
+[triggers]
+crons = ["0 3 * * *"]
