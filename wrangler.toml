@@ -1,4 +1,5 @@
-name = "finance-manager"
+# wrangler.toml
+name = 'finance'
 main = "src/index.js"
 compatibility_date = "2026-10-31"
 workers_dev = true
